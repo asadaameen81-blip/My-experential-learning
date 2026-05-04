@@ -1,0 +1,7 @@
+#include <iostream>    // Header file for input/output functions
+using namespace std;   // Allows using standard names like 'cout' without a prefix
+
+int main() {           // The starting point where execution begins
+    cout << "Hello World!"; // Prints the text
+    return 0;          // Ends the function and returns success status
+}
