@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Weather Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style9.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav shadow-lg">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fas fa-cloud-sun"></i> Weather Dashboard
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Forecast</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Maps</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container py-5">
+
+        <!-- Search -->
+        <div class="search-box mb-4">
+
+            <div class="input-group shadow">
+
+                <input type="text"
+                    class="form-control"
+                    placeholder="Search city...">
+
+                <button class="btn search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Weather Card -->
+        <div class="weather-card text-center p-4 shadow-lg">
+
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+                <div class="text-start">
+                    <h2 class="fw-bold">Hyderabad, IN</h2>
+                    <p id="clock"></p>
+                </div>
+
+                <!-- Dark Mode -->
+                <div>
+                    <button class="btn dark-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Main Weather -->
+            <div class="mt-4">
+
+                <i class="fas fa-sun weather-icon"></i>
+
+                <h1 class="display-2 fw-bold">36°C</h1>
+
+                <h4>Mostly Sunny</h4>
+
+            </div>
+
+            <!-- Temperature Buttons -->
+            <div class="mt-3">
+
+                <button class="btn temp-btn">°C</button>
+
+                <button class="btn temp-btn">°F</button>
+
+            </div>
+
+        </div>
+
+        <!-- Conditions -->
+        <div class="condition-card mt-4 p-4 shadow-lg">
+
+            <h3 class="mb-4 fw-bold">
+                <i class="fas fa-chart-line"></i> Weather Conditions
+            </h3>
+
+            <div class="row text-center">
+
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-droplet info-icon"></i>
+                    <h5>Humidity</h5>
+                    <p>45%</p>
+                </div>
+
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-wind info-icon"></i>
+                    <h5>Wind</h5>
+                    <p>12 km/h</p>
+                </div>
+
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-eye info-icon"></i>
+                    <h5>Visibility</h5>
+                    <p>10 km</p>
+                </div>
+
+                <div class="col-md-3 col-6 mb-4">
+                    <i class="fas fa-temperature-half info-icon"></i>
+                    <h5>Pressure</h5>
+                    <p>1012 hPa</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Forecast -->
+        <div class="forecast-card mt-4 p-4 shadow-lg">
+
+            <h3 class="mb-4 fw-bold">
+                <i class="fas fa-calendar"></i> 7-Day Forecast
+            </h3>
+
+            <div class="row g-4">
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="forecast-day text-center">
+                        <h5>Thu</h5>
+                        <i class="fas fa-cloud-sun"></i>
+                        <p>31°</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="forecast-day text-center">
+                        <h5>Fri</h5>
+                        <i class="fas fa-cloud"></i>
+                        <p>29°</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="forecast-day text-center">
+                        <h5>Sat</h5>
+                        <i class="fas fa-sun"></i>
+                        <p>37°</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="forecast-day text-center">
+                        <h5>Sun</h5>
+                        <i class="fas fa-cloud-rain"></i>
+                        <p>30°</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="forecast-day text-center">
+                        <h5>Mon</h5>
+                        <i class="fas fa-cloud-bolt"></i>
+                        <p>28°</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="forecast-day text-center">
+                        <h5>Tue</h5>
+                        <i class="fas fa-sun"></i>
+                        <p>34°</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-light py-3">
+        <p>© 2026 Modern Weather Dashboard</p>
+    </footer>
+
+    <!-- Clock Script -->
+    <script>
+        setInterval(() => {
+            document.getElementById("clock").innerHTML =
+                new Date().toLocaleTimeString();
+        }, 1000);
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="script.js"></script>
+
+</body>
+
+Java Script (external js)
+</html>
+// Clock Functionality
+function updateClock() {
+    const clockElement = document.getElementById('clock');
+    if (clockElement) {
+        const now = new Date();
+        const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit',
+            second: '2-digit'
+        };
+        clockElement.textContent = now.toLocaleDateString('en-US', options);
+    }
+}
+
+// Update clock every second
+setInterval(updateClock, 1000);
+updateClock();
+
+// Weather API Configuration (OpenWeatherMap - free tier)
+const API_KEY = 'YOUR_API_KEY_HERE'; // Replace with your OpenWeatherMap API key
+const API_URL = 'https://api.openweathermap.org/data/2.5/';
+
+// Current Weather State
+let currentTempC = 36;
+let currentTempF = 96.8;
+let isCelsius = true;
+let currentCity = 'Hyderabad';
+
+// Dark Mode Functionality
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const btn = document.querySelector('.dark-btn');
+    const icon = btn.querySelector('i');
+    
+    if (document.body.classList.contains('dark-mode')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+        localStorage.setItem('darkMode', 'disabled');
+    }
+}
+
+// Load dark mode preference
+function loadDarkModePreference() {
+    const preference = localStorage.getItem('darkMode');
+    if (preference === 'enabled') {
+        document.body.classList.add('dark-mode');
+        const btn = document.querySelector('.dark-btn');
+        const icon = btn.querySelector('i');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    }
+}
+
+// Temperature Conversion
+function toggleTemperature() {
+    isCelsius = !isCelsius;
+    const tempDisplay = document.querySelector('.display-2');
+    const tempButtons = document.querySelectorAll('.temp-btn');
+    
+    if (isCelsius) {
+        tempDisplay.textContent = `${currentTempC}°C`;
+        tempButtons[0].classList.add('active');
+        tempButtons[1].classList.remove('active');
+    } else {
+        tempDisplay.textContent = `${currentTempF}°F`;
+        tempButtons[1].classList.add('active');
+        tempButtons[0].classList.remove('active');
+    }
+}
+
+// Fetch Weather Data from API
+async function fetchWeather(city) {
+    try {
+        const response = await fetch(
+            `${API_URL}weather?q=${city}&appid=${API_KEY}&units=metric`
+        );
+        
+        if (!response.ok) {
+            throw new Error('City not found');
+        }
+        
+        const data = await response.json();
+        updateWeatherUI(data);
+        currentCity = city;
+        
+    } catch (error) {
+        console.error('Error fetching weather:', error);
+        alert('City not found. Please try again.');
+    }
+}
+
+// Update Weather UI with API Data
+function updateWeatherUI(data) {
+    currentTempC = Math.round(data.main.temp);
+    currentTempF = (currentTempC * 9/5) + 32;
+    
+    document.querySelector('.weather-card h2').textContent = `${data.name}, ${data.sys.country}`;
+    document.querySelector('.display-2').textContent = `${currentTempC}°C`;
+    document.querySelector('h4').textContent = data.weather[0].main;
+    
+    // Update icons
+    const weatherIcon = document.querySelector('.weather-icon');
+    weatherIcon.className = `fas ${getWeatherIcon(data.weather[0].main)}`;
+    
+    // Update conditions
+    document.querySelectorAll('.condition-card p')[0].textContent = `${data.main.humidity}%`;
+    document.querySelectorAll('.condition-card p')[1].textContent = `${Math.round(data.wind.speed)} km/h`;
+    document.querySelectorAll('.condition-card p')[2].textContent = `${data.visibility / 1000} km`;
+    document.querySelectorAll('.condition-card p')[3].textContent = `${data.main.pressure} hPa`;
+}
+
+// Get Weather Icon Based on Condition
+function getWeatherIcon(condition) {
+    const icons = {
+        'Clear': 'fa-sun',
+        'Clouds': 'fa-cloud',
+        'Rain': 'fa-cloud-rain',
+        'Drizzle': 'fa-cloud-showers-heavy',
+        'Thunderstorm': 'fa-cloud-bolt',
+        'Snow': 'fa-snowflake',
+        'Mist': 'fa-smog',
+        'Smoke': 'fa-smog',
+        'Haze': 'fa-smog',
+        'Dust': 'fa-smog',
+        'Fog': 'fa-smog'
+    };
+    return icons[condition] || 'fa-cloud-sun';
+}
+
+// Search City Functionality
+function searchCity() {
+    const searchInput = document.querySelector('.search-box input');
+    const city = searchInput.value.trim();
+    
+    if (city) {
+        fetchWeather(city);
+        searchInput.value = '';
+    } else {
+        alert('Please enter a city name');
+    }
+}
+
+// 7-Day Forecast (Mock Data - Replace with API call)
+const forecastData = [
+    { day: 'Thu', icon: 'fa-cloud-sun', temp: 31, condition: 'Partly Cloudy' },
+    { day: 'Fri', icon: 'fa-cloud', temp: 29, condition: 'Cloudy' },
+    { day: 'Sat', icon: 'fa-sun', temp: 37, condition: 'Sunny' },
+    { day: 'Sun', icon: 'fa-cloud-rain', temp: 30, condition: 'Rain' },
+    { day: 'Mon', icon: 'fa-cloud-bolt', temp: 28, condition: 'Thunderstorm' },
+    { day: 'Tue', icon: 'fa-sun', temp: 34, condition: 'Sunny' },
+    { day: 'Wed', icon: 'fa-cloud-sun', temp: 32, condition: 'Partly Cloudy' }
+];
+
+// Update Forecast UI
+function updateForecast() {
+    const forecastContainer = document.querySelector('.forecast-card .row');
+    forecastContainer.innerHTML = '';
+    
+    forecastData.forEach(day => {
+        const col = document.createElement('div');
+        col.className = 'col-lg-2 col-md-4 col-6';
+        col.innerHTML = `
+            <div class="forecast-day text-center">
+                <h5>${day.day}</h5>
+                <i class="fas ${day.icon}"></i>
+                <p>${day.temp}°</p>
+                <small>${day.condition}</small>
+            </div>
+        `;
+        forecastContainer.appendChild(col);
+    });
+}
+
+// Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Dark Mode
+    document.querySelector('.dark-btn').addEventListener('click', toggleDarkMode);
+    
+    // Temperature Toggle
+    document.querySelectorAll('.temp-btn').forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            if (index === 0) {
+                isCelsius = true;
+                toggleTemperature();
+            } else {
+                isCelsius = false;
+                toggleTemperature();
+            }
+        });
+    });
+    
+    // Search Button
+    document.querySelector('.search-btn').addEventListener('click', searchCity);
+    
+    // Search on Enter Key
+    document.querySelector('.search-box input').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            searchCity();
+        }
+    });
+    
+    // Load saved preferences
+    loadDarkModePreference();
+    
+    // Update forecast
+    updateForecast();
+    
+    // Fetch initial weather (replace 'Hyderabad' with user's location)
+    if (API_KEY !== 'YOUR_API_KEY_HERE') {
+        fetchWeather('Hyderabad');
+    }
+});
+
+// Get User's Location
+function getUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const { latitude, longitude } = position.coords;
+                fetchWeatherByCoords(latitude, longitude);
+            },
+            (error) => {
+                console.error('Location error:', error);
+                fetchWeather('Hyderabad');
+            }
+        );
+    } else {
+        fetchWeather('Hyderabad');
+    }
+}
+
+// Fetch Weather by Coordinates
+async function fetchWeatherByCoords(lat, lon) {
+    try {
+        const response = await fetch(
+            `${API_URL}weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+        );
+        const data = await response.json();
+        updateWeatherUI(data);
+        currentCity = data.name;
+    } catch (error) {
+        console.error('Error fetching weather by coords:', error);
+        fetchWeather('Hyderabad');
+    }
+}
+
+// Auto-detect location on load
+getUserLocation();
+
+// Add smooth animations
+function addAnimations() {
+    const elements = document.querySelectorAll('.weather-card, .condition-card, .forecast-card');
+    elements.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = `opacity 0.5s ease, transform 0.5s ease ${index * 0.2}s`;
+        
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, 100);
+    });
+}
+
+// Run animations after page load
+setTimeout(addAnimations, 500);
+
+// Refresh weather every 30 minutes
+setInterval(() => {
+    if (API_KEY !== 'YOUR_API_KEY_HERE') {
+        fetchWeather(currentCity);
+    }
+}, 30 * 60 * 1000);
