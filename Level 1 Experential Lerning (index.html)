@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#current">Current Weather</a></li>
+                <li><a href="#forecast">Forecast</a></li>
+                <li><a href="#maps">Maps</a></li>
+                <li><a href="#alerts">Alerts</a></li>
+                <li><a href="#history">History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Search Section -->
+        <section id="search-section">
+            <h2>Search Location</h2>
+            <form>
+                <input type="text" id="location-input" placeholder="Enter city name, e.g., Nagpur" aria-label="City name">
+                <button type="submit">Search</button>
+                <button type="button">Use Current Location</button>
+            </form>
+            <div id="recent-searches">
+                <h3>Recent Searches</h3>
+                <ul>
+                    <li>Nagpur</li>
+                    <li>Mumbai</li>
+                    <li>Delhi</li>
+                    <li>Pune</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Current Weather Section -->
+        <section id="current" aria-labelledby="current-heading">
+            <h2 id="current-heading">Current Weather - Nagpur, Maharashtra</h2>
+            <div class="weather-main">
+                <div class="main-metrics">
+                    <i class="fas fa-sun" style="font-size: 80px; color: #FFD700;" id="current-icon" aria-hidden="true"></i>
+                    <div>
+                        <p id="current-temp">32°C</p>
+                        <p id="current-description">Sunny</p>
+                    </div>
+                </div>
+                <div class="feels-like">
+                    <p>Feels like: <span id="feels-like">30°C</span></p>
+                </div>
+            </div>
+            <div class="current-details">
+                <div class="detail-item">
+                    <i class="fas fa-tint" aria-hidden="true"></i>
+                    <label>Humidity</label>
+                    <p id="humidity">65%</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-wind" aria-hidden="true"></i>
+                    <label>Wind Speed</label>
+                    <p id="wind-speed">10 km/h</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-compress-arrows-alt" aria-hidden="true"></i>
+                    <label>Pressure</label>
+                    <p id="pressure">1013 hPa</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                    <label>Visibility</label>
+                    <p id="visibility">10 km</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                    <label>UV Index</label>
+                    <p id="uv-index">8</p>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-smog" aria-hidden="true"></i>
+                    <label>Air Quality</label>
+                    <p id="air-quality">Good</p>
+                </div>
+            </div>
+            <div class="sun-info">
+                <div>
+                    <i class="fas fa-sunrise" aria-hidden="true"></i>
+                    <label>Sunrise</label>
+                    <p id="sunrise">06:05 AM</p>
+                </div>
+                <div>
+                    <i class="fas fa-sunset" aria-hidden="true"></i>
+                    <label>Sunset</label>
+                    <p id="sunset">06:45 PM</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hourly Forecast -->
+        <section id="hourly" aria-labelledby="hourly-heading">
+            <h2 id="hourly-heading">Hourly Forecast</h2>
+            <div class="hourly-scroll">
+                <div class="hourly-item">
+                    <p class="time">12 PM</p>
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                    <p class="temp">33°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">1 PM</p>
+                    <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                    <p class="temp">34°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">2 PM</p>
+                    <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                    <p class="temp">35°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">3 PM</p>
+                    <i class="fas fa-cloud" aria-hidden="true"></i>
+                    <p class="temp">34°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">4 PM</p>
+                    <i class="fas fa-cloud" aria-hidden="true"></i>
+                    <p class="temp">33°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">5 PM</p>
+                    <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                    <p class="temp">32°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">6 PM</p>
+                    <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                    <p class="temp">31°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">7 PM</p>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <p class="temp">30°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">8 PM</p>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <p class="temp">29°C</p>
+                </div>
+                <div class="hourly-item">
+                    <p class="time">9 PM</p>
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                    <p class="temp">28°C</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Forecast -->
+        <section id="forecast" aria-labelledby="forecast-heading">
+            <h2 id="forecast-heading">7-Day Forecast</h2>
+            <div class="daily-grid">
+                <div class="daily-card">
+                    <p class="day">Today</p>
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                    <p class="high-low">35° / 25°</p>
+                    <p>Mostly Sunny</p>
+                </div>
+                <div class="daily-card">
+                    <p class="day">Tomorrow</p>
+                    <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                    <p class="high-low">34° / 24°</p>
+                    <p>Partly Cloudy</p>
+                </div>
+                <div class="daily-card">
+                    <p class="day">Fri</p>
+                    <i class="fas fa-cloud" aria-hidden="true"></i>
+                    <p class="high-low">33° / 23°</p>
+                    <p>Cloudy</p>
+                </div>
+                <div class="daily-card">
+                    <p class="day">Sat</p>
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                    <p class="high-low">36° / 26°</p>
+                    <p>Sunny</p>
+                </div>
+                <div class="daily-card">
+                    <p class="day">Sun</p>
+                    <i class="fas fa-hot" aria-hidden="true"></i>
+                    <p class="high-low">37° / 27°</p>
+                    <p>Hot</p>
+                </div>
+                <div class="daily-card">
+                    <p class="day">Mon</p>
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                    <p class="high-low">35° / 25°</p>
+                    <p>Thunderstorms</p>
+                </div>
+                <div class="daily-card">
+                    <p class="day">Tue</p>
+                    <i class="fas fa-cloud-rain" aria-hidden="true"></i>
+                    <p class="high-low">32° / 22°</p>
+                    <p>Rain</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weather Maps -->
+        <section id="maps" aria-labelledby="maps-heading">
+            <h2 id="maps-heading">Weather Maps</h2>
+            <div class="maps-container">
+                <div class="map-placeholder">
+                    <h3>Current Temperature Map</h3>
+                    <div id="temp-map">
+                        <i class="fas fa-map-marked-alt" style="font-size: 100px; color: #FF6B6B;" aria-hidden="true"></i>
+                        <p>Temperature heatmap placeholder</p>
+                    </div>
+                </div>
+                <div class="map-placeholder">
+                    <h3>Precipitation Radar</h3>
+                    <div id="radar-map">
+                        <i class="fas fa-radar-chart" style="font-size: 100px; color: #4ECDC4;" aria-hidden="true"></i>
+                        <p>Live radar overlay</p>
+                    </div>
+                </div>
+                <div class="map-placeholder">
+                    <h3>Wind Speed Map</h3>
+                    <div id="wind-map">
+                        <i class="fas fa-compass" style="font-size: 100px; color: #45B7D1;" aria-hidden="true"></i>
+                        <p>Wind vectors map</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alerts Section -->
+        <section id="alerts" aria-labelledby="alerts-heading">
+            <h2 id="alerts-heading">Weather Alerts</h2>
+            <div id="alerts-list">
+                <div class="alert-item high-priority">
+                    <i class="fas fa-exclamation-triangle" style="color: #FF4757;" aria-hidden="true"></i>
+                    <h4>Heatwave Warning</h4>
+                    <p>Temperatures expected to exceed 40°C today. Stay hydrated.</p>
+                    <span class="alert-time">Expires: 8 PM</span>
+                </div>
+                <div class="alert-item low-priority">
+                    <i class="fas fa-exclamation-circle" style="color: #FFA502;" aria-hidden="true"></i>
+                    <h4>Dust Advisory</h4>
+                    <p>High dust levels due to winds. Sensitive groups limit outdoor activity.</p>
+                    <span class="alert-time">Expires: Tomorrow</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Metrics -->
+        <section id="metrics" aria-labelledby="metrics-heading">
+            <h2 id="metrics-heading">Additional Metrics</h2>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <i class="fas fa-smog" style="color: #2ED573;" aria-hidden="true"></i>
+                    <h3>Air Quality Index</h3>
+                    <p id="aqi-value">AQI: 45</p>
+                    <p class="aqi-status good">Good</p>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-seedling" aria-hidden="true"></i>
+                    <h3>Pollen Count</h3>
+                    <p>Low</p>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-virus" style="color: #FF6B6B;" aria-hidden="true"></i>
+                    <h3>Flu Risk</h3>
+                    <p>Medium</p>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-solar-panel" style="color: #FFD93D;" aria-hidden="true"></i>
+                    <h3>UV Index</h3>
+                    <p>Very High (8)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Data -->
+        <section id="history" aria-labelledby="history-heading">
+            <h2 id="history-heading">Historical Data</h2>
+            <div class="history-charts">
+                <div class="chart-placeholder">
+                    <i class="fas fa-chart-line" style="font-size: 60px; color: #3742FA;" aria-hidden="true"></i>
+                    <h4>Temperature Trend (Past 7 Days)</h4>
+                    <div id="temp-chart">Line graph showing daily highs/lows</div>
+                </div>
+                <div class="chart-placeholder">
+                    <i class="fas fa-chart-bar" style="font-size: 60px; color: #00D2D3;" aria-hidden="true"></i>
+                    <h4>Precipitation (Past Month)</h4>
+                    <div id="precip-chart">Bar graph of rainfall amounts</div>
+                </div>
+            </div>
+            <form>
+                <label for="date-range">Select Date Range:</label>
+                <input type="date" id="date-range">
+                <button type="submit">View Data</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Weather Dashboard. Data from OpenWeatherMap API. Location: Nagpur, India.</p>
+    </footer>
+</body>
+</html>
